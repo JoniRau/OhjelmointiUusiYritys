@@ -1,0 +1,35 @@
+#uusiAsiakas, #takaisin {
+	color: blue;
+	cursor: pointer;
+}
+
+.poista{
+	color: blue;
+	cursor: pointer;
+}
+.oikealle{
+	text-align: right;
+}
+
+.vasemmalle{
+	text-align: left;
+	color: #7FFFD4;
+	text-transform: uppercase;
+	filter: brightness(70%);
+}
+
+.runko{
+	text-align: left;
+	color: #F0FFFF;	
+	filter: brightness(50%);
+	
+}
+
+.tausta{
+	background-color: #FAEBD7;
+}
+
+.otsikko{
+	background-color: #ff7892;
+}
+

@@ -86,4 +86,46 @@ public class Dao {
 		}		
 		return asiakkaat;
 	}
+	public boolean lisaaAsiakas(Asiakas asiakas){
+		boolean paluuArvo=true;
+		sql="INSERT INTO asiakkaat VALUES(?,?,?,?,?)";						  
+		try {
+			con = yhdista();
+			PreparedStatement pst1 = con.prepareStatement("select max(asiakas_id)+1 from asiakkaat");
+            ResultSet rs = pst1.executeQuery();
+            String asiakas_id ="";
+            while(rs.next())
+            {
+                asiakas_id = rs.getString(1);
+            }
+			stmtPrep=con.prepareStatement(sql); 
+			stmtPrep.setInt(1, Integer.parseInt(asiakas_id));
+			stmtPrep.setString(2, asiakas.getEtunimi());
+			stmtPrep.setString(3, asiakas.getSukunimi());
+			stmtPrep.setString(4, asiakas.getPuhelin());
+			stmtPrep.setString(5, asiakas.getSposti());
+			stmtPrep.executeUpdate();
+	        con.close();
+		} catch (Exception e) {				
+			e.printStackTrace();
+			paluuArvo=false;
+		}				
+		return paluuArvo;
+	}
+	
+	public boolean poistaAsiakas(String asiakas_id){ //Yleensä tiedot poistetaan
+		boolean paluuArvo=true;
+		sql="DELETE FROM asiakkaat WHERE asiakas_id=?";						  
+		try {
+			con = yhdista();
+			stmtPrep=con.prepareStatement(sql); 
+			stmtPrep.setString(1, asiakas_id);			
+			stmtPrep.executeUpdate();
+	        con.close();
+		} catch (Exception e) {				
+			e.printStackTrace();
+			paluuArvo=false;
+		}				
+		return paluuArvo;
+	}	
 }

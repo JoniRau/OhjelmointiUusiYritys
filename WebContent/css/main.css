@@ -4,9 +4,15 @@
 }
 
 .poista{
+	color: red;
+	cursor: pointer;
+}
+
+.muuta{
 	color: blue;
 	cursor: pointer;
 }
+
 .oikealle{
 	text-align: right;
 }

@@ -38,13 +38,17 @@ public class Asiakkaat extends HttpServlet {
 		}else if(pathInfo.indexOf("haeyksi")!=-1) {
 			String asiakas_id = pathInfo.replace("/haeyksi/", "");	
 			Asiakas asiakas = dao.etsiAsiakas(asiakas_id);
-			JSONObject JSON = new JSONObject();
-			JSON.put("etunimi", asiakas.getEtunimi());
-			JSON.put("sukunimi", asiakas.getSukunimi());
-			JSON.put("puhelin", asiakas.getPuhelin());
-			JSON.put("sposti", asiakas.getSposti());
-			JSON.put("asiakas_id", asiakas.getAsiakas_id());	
-			strJSON = JSON.toString();		
+			if (asiakas==null) {
+				strJSON = "{}";
+			} else {
+				JSONObject JSON = new JSONObject();
+				JSON.put("etunimi", asiakas.getEtunimi());
+				JSON.put("sukunimi", asiakas.getSukunimi());
+				JSON.put("puhelin", asiakas.getPuhelin());
+				JSON.put("sposti", asiakas.getSposti());
+				JSON.put("asiakas_id", asiakas.getAsiakas_id());	
+				strJSON = JSON.toString();
+			}					
 		}else{
 			String hakusana = pathInfo.replace("/", "");
 			asiakkaat = dao.listaaKaikki(hakusana);
@@ -59,7 +63,6 @@ public class Asiakkaat extends HttpServlet {
 		System.out.println("Asiakkaat.doPost()");
 		JSONObject jsonObj = new JsonStrToObj().convert(request);		
 		Asiakas asiakas = new Asiakas();
-		asiakas.setAsiakas_id(jsonObj.getInt("asiakas_id"));
 		asiakas.setEtunimi(jsonObj.getString("etunimi"));
 		asiakas.setSukunimi(jsonObj.getString("sukunimi"));
 		asiakas.setPuhelin(jsonObj.getString("puhelin"));

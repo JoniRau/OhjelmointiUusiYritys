@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "27edbdde-36d8-49aa-aac0-32c8758d389e",
+		"name": "Asiakastesti",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/AsiakkaatViides/asiakkaat/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"AsiakkaatViides",
+						"asiakkaat",
+						""
+					]
+				},
+				"description": "GET test"
+			},
+			"response": []
+		},
+		{
+			"name": "GET test with search word",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/AsiakkaatViides/asiakkaat/Liisa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"AsiakkaatViides",
+						"asiakkaat",
+						"Liisa"
+					]
+				},
+				"description": "GET test with search word"
+			},
+			"response": []
+		},
+		{
+			"name": "POST test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"etunimi\":\"Testi\",\"sukunimi\":\"testi\",\"puhelin\":\"050505050\",\"sposti\":\"testi.testi\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/AsiakkaatViides/asiakkaat/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"AsiakkaatViides",
+						"asiakkaat",
+						""
+					]
+				},
+				"description": "POST test"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT test",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"vanhaasiakasid\":\"10\",\"asiakas_id\":\"10\",\"etunimi\":\"Testi\",\"sukunimi\":\"Testi\",\"puhelin\":\"050505050\",\"sposti\":\"testi.testi\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/AsiakkaatViides/asiakkaat/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"AsiakkaatViides",
+						"asiakkaat",
+						""
+					]
+				},
+				"description": "PUT test "
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE test",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"asiakas_id\":\"10\",\"etunimi\":\"Testi\",\"sukunimi\":\"Testi\",\"puhelin\":\"050505050\",\"sposti\":\"testi.testi\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/AsiakkaatViides/asiakkaat/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"AsiakkaatViides",
+						"asiakkaat",
+						""
+					]
+				},
+				"description": "DELETE test\r\n"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

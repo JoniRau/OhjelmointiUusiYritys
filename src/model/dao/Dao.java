@@ -1,5 +1,4 @@
 package model.dao;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -113,7 +112,7 @@ public class Dao {
 		return paluuArvo;
 	}
 	
-	public boolean poistaAsiakas(String asiakas_id){ //Yleens‰ tiedot poistetaan
+	public boolean poistaAsiakas(String asiakas_id){ //Yleens‰ tiedot merkit‰‰n poistetuksi ei poisteta
 		boolean paluuArvo=true;
 		sql="DELETE FROM asiakkaat WHERE asiakas_id=?";						  
 		try {

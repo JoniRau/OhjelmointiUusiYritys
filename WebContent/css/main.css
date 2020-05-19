@@ -19,23 +19,26 @@
 
 .vasemmalle{
 	text-align: left;
-	color: #7FFFD4;
+	color: #81599F;
 	text-transform: uppercase;
 	filter: brightness(70%);
 }
 
 .runko{
 	text-align: left;
-	color: #F0FFFF;	
-	filter: brightness(50%);
-	
+	color: #81599F;	
+	font-weight: bold;	
 }
 
 .tausta{
-	background-color: #FAEBD7;
+	background-color: #9BCCFD;
+	border: 1px solid black;
 }
 
 .otsikko{
 	background-color: #ff7892;
 }
 
+.taulu{
+	border: 1px solid black;
+}
